@@ -67,10 +67,10 @@
 					if( iteration ){
 						filter = "td:nth-child("+ iteration +"n + " + ( colstart ) +")";
 					}
-					$cells.filter( filter ).prepend( "<b class='" + classes.cellLabels + hierarchyClass + "'>" + html + "</b>"  );
+					$cells.filter( filter ).prepend( "<div class='" + classes.cellLabels + hierarchyClass + "'>" + html + "</div>"  );
 				} else {
-					$cells.wrapInner( "<span class='" + classes.cellContentLabels + "'></span>" );
-					$cells.prepend( "<b class='" + classes.cellLabels + "'>" + html + "</b>"  );
+					$cells.wrapInner( "<div class='" + classes.cellContentLabels + "'></div>" );
+					$cells.prepend( "<div class='" + classes.cellLabels + "'>" + html + "</div>"  );
 				}
 			}
 		});

@@ -1,4 +1,4 @@
-/*! Tablesaw - v1.0.3 - 2015-01-27
+/*! Tablesaw - v1.0.3 - 2015-02-15
 * https://github.com/filamentgroup/tablesaw
 * Copyright (c) 2015 Filament Group; Licensed MIT */
 ;(function( $ ) {
@@ -232,10 +232,10 @@ if( !Tablesaw.config ) {
 					if( iteration ){
 						filter = "td:nth-child("+ iteration +"n + " + ( colstart ) +")";
 					}
-					$cells.filter( filter ).prepend( "<b class='" + classes.cellLabels + hierarchyClass + "'>" + html + "</b>"  );
+					$cells.filter( filter ).prepend( "<div class='" + classes.cellLabels + hierarchyClass + "'>" + html + "</div>"  );
 				} else {
-					$cells.wrapInner( "<span class='" + classes.cellContentLabels + "'></span>" );
-					$cells.prepend( "<b class='" + classes.cellLabels + "'>" + html + "</b>"  );
+					$cells.wrapInner( "<div class='" + classes.cellContentLabels + "'></div>" );
+					$cells.prepend( "<div class='" + classes.cellLabels + "'>" + html + "</div>"  );
 				}
 			}
 		});
