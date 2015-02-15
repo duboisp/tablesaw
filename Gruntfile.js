@@ -54,6 +54,22 @@ module.exports = function(grunt) {
 				],
 				dest: 'dist/stackonly/<%= pkg.name %>.stackonly.js'
 			},
+			jscustomresponsive: {
+				src: [
+					'src/tables.btnmarkup.js',
+					'src/tables.columntoggle.js',
+					'src/tables.swipetoggle.js',
+					'src/tables.minimap.js',
+					'src/tables.modeswitch.js'
+				],
+				dest: 'dist/customresponsive/<%= pkg.name %>.customresponsive.js'
+			},
+			jssortable: {
+				src: [
+					'src/tables.sortable.js',
+				],
+				dest: 'dist/sortable/<%= pkg.name %>.sortable.js'
+			},
 			cssall: {
 				src: [
 					'src/tables.css',
@@ -205,7 +221,7 @@ module.exports = function(grunt) {
 
 	// Default task.
 	grunt.registerTask('travis', ['jshint', 'qunit']);
-	grunt.registerTask('concat-pre', ['concat:jsall', 'concat:jsstack', 'concat:cssall', 'concat:cssbare', 'concat:cssstack', 'concat:cssstackmixinpre']);
+	grunt.registerTask('concat-pre', ['concat:jsall', 'concat:jsstack', 'concat:jscustomresponsive', 'concat:jssortable', 'concat:cssall', 'concat:cssbare', 'concat:cssstack', 'concat:cssstackmixinpre']);
 	grunt.registerTask('concat-post', ['concat:cssstackmixinpost']);
 	grunt.registerTask('src', ['concat-pre', 'myth', 'concat-post', 'copy', 'clean']);
 	grunt.registerTask('filesize', ['uglify', 'cssmin', 'bytesize', 'clean']);
